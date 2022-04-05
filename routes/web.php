@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,4 +24,20 @@ Route::get('/', function () {
 Route:: get ('/state', function () {
     return view('state');
  });
+//  Route::resource('navbars','navbarController');
+use App\Http\Controllers\DataTableAjaxCRUDController;
  
+// Route::get('ajax-crud-datatable', [DataTableAjaxCRUDController::class, 'index']);
+// Route::post('store-company', [DataTableAjaxCRUDController::class, 'store']);
+// Route::post('edit-company', [DataTableAjaxCRUDController::class, 'edit']);
+// Route::post('delete-company', [DataTableAjaxCRUDController::class, 'destroy']);
+// Route::resource('blogs', BlogController::class);
+// Route::get('/blogs', [BlogControllerr::class, '']);
+// Route:: get ('/blogs', function () {
+//     return view('index');
+//  });
+
+use App\Http\Controllers\BlogController;view('welcome');
+
+
+Route::resource('blogs', BlogController::class);

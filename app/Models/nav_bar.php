@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class states extends Model
+class nav_bar extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'state','status',
-        
+protected $fillable =
+    [
+        'name','route','ordering',
     ];
 }

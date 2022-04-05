@@ -79,7 +79,10 @@
     <option value="active">active</option>
     <option value="inactive">inactive</option>
   </select>
-</form>
+  <br>  <br>  <br>   <br>
+  <button type="button" class="btn btn-dark" id="submit"> submit</button>
+  <br>  <br>  <br>   <br>
+</form> 
                       <th>
                         <th>#</th>
                         <th>Name <i class="fa fa-sort"></i></th>
