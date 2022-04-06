@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class nav_bar extends Model
+class Book extends Model
 {
     use HasFactory;
-protected $fillable =
-    [
-        'name','route','ordering',
+    protected $fillable = [
+        'title', 'code', 'author'
     ];
 }

@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('states', function (Blueprint $table) {
+        Schema::create('menuitems', function (Blueprint $table) {
             $table->id();
-            $table->string('state');
+            $table->string('name');  
+            $table->string('link');
             $table->string('status');
-
-          
+            $table->timestamps();
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('states');
+        Schema::dropIfExists('menuitems');
     }
 };

@@ -6,15 +6,14 @@
 </head>
 <body>
 <div class="jumbotron text-center">
-  <h1>Laravel 9 CRUD </h1>
-  <p>By: Siddharth Shukla</p> 
+ 
 </div>
   
 <div class="container">
     @yield('content')
 </div>
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <p>Footer</p>
+ 
 </div>
 </body>
 </html>

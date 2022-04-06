@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+    //    $menuitems = Menuitem::where('status','Enabled')->get();
+    //    view()->share('menuitems', $menuitems);
     }
 }
