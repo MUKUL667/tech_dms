@@ -1,12 +1,11 @@
 <?php
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AjaxBOOKCRUDController;
-use App\Http\Controllers\BlogController;view('welcome');
+use App\Http\Controllers\MENUCONTROLLER;
+use App\Http\Controllers\SUBMENUCONTROLLER;
 
 
-use App\Http\Controllers\MenuitemController;
-use App\Http\Controllers\Menuitem;
+
 
 
 
@@ -28,36 +27,23 @@ Route::get('/', function () {
 
   Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('list', [Menuitem::class, 'index']);
-Route::get('show-user', [Menuitem::class, 'show']);
 
-
-Route::get('/', [EmployeeController::class, 'index']);
-Route::get('/getUsers', [EmployeeController::class, 'getUsers']);
-Route::post('/getUserbyid', [EmployeeController::class, 'getUserbyid']);
-
-
-//  Route::resource('navbars','navbarController');
-// use App\Http\Controllers\DataTableAjaxCRUDController;
+ Route::get('/index', [MENUCONTROLLER::class, 'index']);
+ Route::get('/delete/{id}', [MENUCONTROLLER::class, 'delete'])->name('delete');
+ Route::get('/edit/{id}', [MENUCONTROLLER::class,'edit'])->name('edit');
+ route::get('/add', [MENUCONTROLLER::class,'addpost'])->name('add.post');
  
-// Route::get('ajax-crud-datatable', [DataTableAjaxCRUDController::class, 'index']);
-// Route::post('store-company', [DataTableAjaxCRUDController::class, 'store']);
-// Route::post('edit-company', [DataTableAjaxCRUDController::class, 'edit']);
-// Route::post('delete-company', [DataTableAjaxCRUDController::class, 'destroy']);
-// Route::resource('blogs', BlogController::class);
-// Route::get('/blogs', [BlogControllerr::class, '']);
-// Route:: get ('/blogs', function () {
-//     return view('index');
-//  });
-
-
-
-
-Route::resource('blogs', BlogController::class);
-
-Route::get('ajax-book-crud', [AjaxBOOKCRUDController::class, 'index']);
-Route::post('add-update-book', [AjaxBOOKCRUDController::class, 'store']);
-Route::post('edit-book', [AjaxBOOKCRUDController::class, 'edit']);
-Route::post('delete-book', [AjaxBOOKCRUDController::class, 'destroy']);
+ route::post('/add', [MENUCONTROLLER::class,'savepost'])->name('save.post');
+ 
+ route::post('/update', [MENUCONTROLLER::class,'updatepost']);
+ 
+ ///ROUTES OF SUBMENU
+ // Route::get('/submenu', [SUBMENUCONTROLLER::class, 'index']);
+ route::get('/submenuadd', [SUBMENUCONTROLLER::class,'addpost'])->name('add.post');
+ 
+ route::post('/submenuadd', [SUBMENUCONTROLLER::class,'savepost'])->name('save.post');
+ Route::get('/subedit/{id}', [SUBMENUCONTROLLER::class,'edit'])->name('edit');
+ route::post('/subupdate', [SUBMENUCONTROLLER::class,'updatepost']);
+ Route::get('/subdelete/{id}', [SUBMENUCONTROLLER::class,'delete'])->name('delete');
 
 

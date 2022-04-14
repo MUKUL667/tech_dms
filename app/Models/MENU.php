@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Book extends Model
+class MENU extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'title', 'code', 'author'
+    protected $table = 'menu';
+    protected $fillable =[
+        'name','status','link',
     ];
 }

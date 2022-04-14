@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class menuitem extends Model
+class SUBMENU extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'name',
-        'status',
-        'link',
-
+    protected $table = 'submenu';
+    protected $fillable =[
+        'name','menu_id','status','link'
     ];
 }
